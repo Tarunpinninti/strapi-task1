@@ -102,3 +102,6 @@ Located in:
     git commit -m "Task 1 - Strapi setup completed"
     git branch -M main
     git remote add origin https://github.com/Tarunpinninti/strapi-task1.git
+
+This line is added for Task-1 Pull Request.
+
