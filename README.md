@@ -1,61 +1,104 @@
-# 🚀 Getting started with Strapi
+# DevOps Internship – Task 1  
+## Strapi CMS Setup, Exploration & Content Type Creation
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+This repository contains my work for **Task 1** of the PearlThoughts DevOps Internship program.  
+The objective of this task is to understand Strapi, set it up locally, explore its structure, create a sample content type, and push the complete setup to GitHub.
 
-### `develop`
+## **Task Objectives**
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- Clone the official Strapi repository  
+- Run Strapi locally  
+- Explore Strapi project folder structure  
+- Start the Strapi Admin Panel  
+- Create a sample content type  
+- Push the Strapi setup to GitHub  
+- Document steps in a README  
+- Record a Loom walkthrough video
 
-```
-npm run develop
-# or
-yarn develop
-```
+## **Cloned the Official Strapi Repository**
 
-### `start`
+Although the official Strapi repository cannot be run directly (it is a monorepo with workspaces), cloning helped see the structure.
+                  
+                  git clone https://github.com/strapi/strapi
+Note: This step is for understanding source code, not for running the CMS.
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+## Created a New Strapi Project (Local Setup)
 
-```
-npm run start
-# or
-yarn start
-```
+To run Strapi locally, I created a new Strapi project using the recommended command:
+ 
+     npx create-strapi-app@latest strapi-task1 --quickstart --skip-cloud
 
-### `build`
+This command:
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+Generates a full Strapi project
 
-```
-npm run build
-# or
-yarn build
-```
+Installs all dependencies
 
-## ⚙️ Deployment
+Creates a SQLite database
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+Starts the server automatically
 
-```
-yarn strapi deploy
-```
+## Started the Strapi Server
+Inside the project folder:
 
-## 📚 Learn more
+    npm run develop
+Strapi launched successfully at:
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+🔗 http://localhost:1337/admin
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+## Created the Admin User
 
-## ✨ Community
+On first launch, Strapi asked me to create an administrator account to access the dashboard.
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+## Explored Strapi Project Folder Structure
 
----
+Strapi generates a well-organized folder structure:
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+Folder	Description:
+
+/src	      = Contains main application code
+
+/src/api	  = Includes auto-generated APIs for each content type
+
+/config	    = Environment and server configuration
+
+/public	   =  Static files served to the client
+
+/.tmp	     = Local SQLite database & temporary build files
+
+/dist	     = Compiled files after building the admin panel
+
+## Created a Sample Content Type
+
+Using the Content-Type Builder, I created a collection type:
+
+Collection Type: Product
+
+Fields included:
+
+name (Text)
+
+price (Number)
+
+description (Text)
+
+Strapi automatically generated:
+
+Controllers
+
+Routes
+
+Services
+
+Schema files
+
+Located in:
+/src/api/product
+
+## Pushed the Project to GitHub
+
+    git init
+    git add .
+    git commit -m "Task 1 - Strapi setup completed"
+    git branch -M main
+    git remote add origin https://github.com/Tarunpinninti/strapi-task1.git
